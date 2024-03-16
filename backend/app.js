@@ -12,7 +12,10 @@ dotenv.config();
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://job-portal-9tao.vercel.app',
+  credentials: true
+}));
 
 app.use(cookieParser());
 app.use(express.json());

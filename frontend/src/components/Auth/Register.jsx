@@ -43,8 +43,7 @@ const Register = () => {
     }
   };
 
-  
-    return <Navigate to={'/'}/>
+
   
 
 

@@ -38,7 +38,7 @@ const Register = () => {
       setPhone("");
       setRole("");
       setIsAuthorized(true);
-      <Navigate to={'/'}/>
+      
     } catch (error) {
       toast.error(error.response.data.message);
     }
@@ -46,7 +46,9 @@ const Register = () => {
   };
 
   
-     
+     if(isAuthorized){
+      <Navigate to={'/'}/>
+     }
   
   
 

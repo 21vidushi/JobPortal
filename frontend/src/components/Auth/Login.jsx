@@ -32,14 +32,15 @@ const Login = () => {
       setPassword("");
       setRole("");
       setIsAuthorized(true);
-      <Navigate to={'/'}/>
     } catch (error) {
       toast.error(error.response.data.message);
     }
 
   };
 
-  
+  if(isAuthorized){
+    <Navigate to={'/'}/>
+  }
     
   
 

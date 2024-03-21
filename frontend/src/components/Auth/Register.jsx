@@ -43,9 +43,9 @@ const Register = () => {
     }
   };
 
-  if(isAuthorized){
-    return <Navigate to={'/'}/>
-  }
+  
+     <Navigate to={'/'}/>
+  
   
 
 

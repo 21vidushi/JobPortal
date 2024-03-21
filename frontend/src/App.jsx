@@ -19,24 +19,24 @@ import MyJobs from "./components/Job/MyJobs";
 
 const App = () => {
   const { isAuthorized, setIsAuthorized, setUser } = useContext(Context);
-  const fetchUser = async() => {
-    try {
-      const response = await axios.get(
-        "https://jobportal-y6p3.onrender.com/api/v1/user/getuser",
-        {
-          withCredentials: true,
-        }
-      );
-      setUser(response.data.user);
-      setIsAuthorized(true);
-    } catch (error) {
-      setIsAuthorized(false);
-    }
-  };
-  useEffect(() => {
+  // const fetchUser = async() => {
+  //   try {
+  //     const response = await axios.get(
+  //       "https://jobportal-y6p3.onrender.com/api/v1/user/getuser",
+  //       {
+  //         withCredentials: true,
+  //       }
+  //     );
+  //     setUser(response.data.user);
+  //     setIsAuthorized(true);
+  //   } catch (error) {
+  //     setIsAuthorized(false);
+  //   }
+  // };
+  // useEffect(() => {
    
-    fetchUser();
-  }, [isAuthorized]);
+  //   fetchUser();
+  // }, [isAuthorized]);
 
   return (
     <>

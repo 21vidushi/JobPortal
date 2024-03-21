@@ -6,6 +6,7 @@ import { FaRegUser } from "react-icons/fa";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { Context } from "../../main";
+const navigateTo = useNavigate();
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -32,11 +33,11 @@ const Login = () => {
       setPassword("");
       setRole("");
       setIsAuthorized(true);
+      navigateTo("/");
+     
+      
     } catch (error) {
       toast.error(error.response.data.message);
-    }
-    if(isAuthorized){
-      <Navigate to={'/'}/>
     }
       
     

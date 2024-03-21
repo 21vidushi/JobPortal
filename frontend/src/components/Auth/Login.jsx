@@ -35,13 +35,14 @@ const Login = () => {
     } catch (error) {
       toast.error(error.response.data.message);
     }
+    if(isAuthorized){
+      <Navigate to={'/'}/>
+    }
+      
+    
 
   };
 
-  if(isAuthorized){
-    <Navigate to={'/'}/>
-  }
-    
   
 
   return (

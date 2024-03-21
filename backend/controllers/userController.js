@@ -2,6 +2,7 @@ import { catchAsyncErrors } from "../middlewares/catchAsyncError.js";
 import { User } from "../models/userSchema.js";
 import ErrorHandler from "../middlewares/error.js";
 import { sendToken } from "../utils/jwtToken.js";
+import jwt from "jsonwebtoken";
 
 export const register = catchAsyncErrors(async (req, res, next) => {
   const { name, email, phone, password, role } = req.body;
@@ -40,6 +41,17 @@ export const login = catchAsyncErrors(async (req, res, next) => {
       new ErrorHandler(`User with provided email and ${role} not found!`, 404)
     );
   }
+  const payload={
+    email:email,
+    password:password,
+    id:user._id,
+    role:role
+}
+  let token= jwt.sign(payload,process.env.JWT_SECRET_KEY,{
+    expiresIn:"24h",
+   });
+   user=user.toObject();
+   user.token=token;
   sendToken(user, 201, res, "User Logged In!");
 });
 

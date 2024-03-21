@@ -7,7 +7,6 @@ import { FaPhoneFlip } from "react-icons/fa6";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import toast from "react-hot-toast";
-import { Context } from "../../main";
 const navigateTo = useNavigate();
 
 const Register = () => {
@@ -16,9 +15,6 @@ const Register = () => {
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("");
-
-  const { isAuthorized, setIsAuthorized, user, setUser } = useContext(Context);
-
   const handleRegister = async (e) => {
     e.preventDefault();
     try {

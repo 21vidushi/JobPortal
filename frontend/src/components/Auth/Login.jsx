@@ -5,7 +5,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { FaRegUser } from "react-icons/fa";
 import axios from "axios";
 import toast from "react-hot-toast";
-import { Context } from "../../main";
 const navigateTo = useNavigate();
 
 const Login = () => {
@@ -13,7 +12,6 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [role, setRole] = useState("");
 
-  const { isAuthorized, setIsAuthorized } = useContext(Context);
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -32,7 +30,6 @@ const Login = () => {
       setEmail("");
       setPassword("");
       setRole("");
-      setIsAuthorized(true);
       navigateTo("/");
      
       
